@@ -1,0 +1,33 @@
+{
+  "name": "pi-router",
+  "author": "SirVeggie",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Route wake on lan from server",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "pm2 startOrReload ecosystem.config.js",
+    "stop": "pm2 delete ecosystem.config.js",
+    "start:node": "node build/index.js",
+    "build": "tsc",
+    "fetch": "git fetch --all && git reset --hard origin/master",
+    "prod": "npm i && npm run build && npm start",
+    "deploy": "npm run fetch && npm run prod"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
+    "@types/wake_on_lan": "^0.0.30",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.20.0",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "morgan": "^1.10.0",
+    "pm2": "^5.2.0",
+    "typescript": "^4.8.2",
+    "wake_on_lan": "^1.0.0"
+  }
+}
